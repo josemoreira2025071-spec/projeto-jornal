@@ -1,8 +1,21 @@
 <!DOCTYPE html>
+{% load static %}
 <html lang="pt-pt">
 <head>
     <meta charset="UTF-8">
     <title>{{ artigo.titulo }}</title>
+    <style>
+        body {
+            background-image: url('{% static "fundo.png" %}');
+            background-size: cover;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+            color: #ffffff;
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+        a { color: #80d4ff; }
+    </style>
 </head>
 <body>
     <a href="{% url 'lista_artigos' %}">⬅ Voltar à Página Principal</a>
@@ -14,7 +27,7 @@
 
     <hr>
     <a href="{% url 'comentarios_artigo' artigo.id %}">
-        <button>Ver e Adicionar Comentários</button>
+        <button style="padding: 10px; cursor: pointer;">Ver e Adicionar Comentários</button>
     </a>
 </body>
 </html>

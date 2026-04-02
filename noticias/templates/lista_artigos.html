@@ -1,8 +1,21 @@
 <!DOCTYPE html>
+{% load static %}
 <html lang="pt-pt">
 <head>
     <meta charset="UTF-8">
     <title>Jornal Online</title>
+    <style>
+        body {
+            background-image: url('{% static "fundo.png" %}');
+            background-size: cover;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+            color: #ffffff; /* Altera se a tua imagem for muito clara */
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+        a { color: #80d4ff; } /* Cor dos links para lerem bem em fundos escuros */
+    </style>
 </head>
 <body>
     <h1>Últimas Notícias</h1>

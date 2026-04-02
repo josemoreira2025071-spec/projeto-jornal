@@ -1,8 +1,21 @@
 <!DOCTYPE html>
+{% load static %}
 <html lang="pt-pt">
 <head>
     <meta charset="UTF-8">
     <title>Comentários - {{ artigo.titulo }}</title>
+    <style>
+        body {
+            background-image: url('{% static "fundo.png" %}');
+            background-size: cover;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+            color: #ffffff;
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+        a { color: #80d4ff; }
+    </style>
 </head>
 <body>
     <a href="{% url 'detalhe_artigo' artigo.id %}">⬅ Voltar ao Artigo</a>
@@ -24,8 +37,8 @@
     <form method="POST">
         {% csrf_token %}
         <textarea name="texto_comentario" rows="4" cols="50" placeholder="Escreva o seu comentário aqui..." required></textarea>
-        <br>
-        <button type="submit">Publicar Comentário</button>
+        <br><br>
+        <button type="submit" style="padding: 10px; cursor: pointer;">Publicar Comentário</button>
     </form>
 </body>
 </html>
